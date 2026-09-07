@@ -1,0 +1,22 @@
+{
+  "name": "honeychain",
+  "version": "1.0.0",
+  "description": "Blockchain-based Honey Traceability & Smart Beekeeping System - SIH 2026",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd blockchain && npm install && cd ../server && npm install && cd ../client && npm install && cd ../client-landing && npm install",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "dev:landing": "cd client-landing && npm run dev",
+    "dev:blockchain": "cd blockchain && npx hardhat node",
+    "deploy:contracts": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
+    "deploy:amoy": "cd blockchain && npx hardhat run scripts/deploy-amoy.js --network amoy",
+    "deploy:fuji": "cd blockchain && npx hardhat run scripts/deploy-fuji.js --network fuji",
+    "seed": "cd server && npm run seed",
+    "test:contracts": "cd blockchain && npx hardhat test",
+    "test:server": "cd server && npm test"
+  },
+  "keywords": ["blockchain", "honey", "traceability", "SIH", "KVIC", "polygon"],
+  "author": "HoneyChain Team",
+  "license": "MIT"
+}

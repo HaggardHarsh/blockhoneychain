@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFF8EB;
+  --foreground: #171717;
+  --honey-glow: rgba(244, 166, 34, 0.15);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1408;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Nunito', system-ui, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Honeycomb SVG pattern - richer pattern */
+.honeycomb-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='56' height='100' viewBox='0 0 56 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66Z' fill='none' stroke='%23F4A622' stroke-width='1.5' opacity='0.25'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84L28 100Z' fill='none' stroke='%23F4A622' stroke-width='1.5' opacity='0.25'/%3E%3C/svg%3E");
+  background-size: 80px 143px;
+}
+
+/* Bee flight paths & wing flaps */
+@keyframes wing-flap {
+  0%, 100% { transform: scaleY(1) rotate(-8deg); }
+  50%       { transform: scaleY(0.25) rotate(5deg); }
+}
+@keyframes wing-flap-r {
+  0%, 100% { transform: scaleY(1) rotate(8deg); }
+  50%       { transform: scaleY(0.25) rotate(-5deg); }
+}
+@keyframes bee-drift-across {
+  0%   { transform: translate(0, 0px) rotate(-5deg); opacity: 0; }
+  5%   { opacity: 1; }
+  45%  { transform: translate(45vw, -30px) rotate(3deg); }
+  55%  { transform: translate(55vw, -26px) rotate(-2deg); }
+  95%  { opacity: 1; }
+  100% { transform: translate(110vw, -60px) rotate(-5deg); opacity: 0; }
+}
+
+/* Glass morphism cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 166, 34, 0.18);
+  box-shadow: 0 4px 24px rgba(244, 166, 34, 0.08), 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.glass-sidebar {
+  background: linear-gradient(180deg, rgba(255, 251, 240, 0.97) 0%, rgba(255, 245, 225, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Warm honey gradient backgrounds */
+.honey-gradient {
+  background: linear-gradient(135deg, #FFF8EB 0%, #FFEFD5 50%, #FFF3CC 100%);
+}
+
+.honey-gradient-warm {
+  background: linear-gradient(135deg, #FFF5E0 0%, #FFE8C0 50%, #FFD899 100%);
+}
+
+/* Animated floating bubbles */
+@keyframes float-up {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 224, 130, 0.5), rgba(244, 166, 34, 0.15));
+  animation: float-up linear infinite;
+  pointer-events: none;
+}
+
+.float-gentle {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+/* Honey drip effect on top */
+.honey-drip-top {
+  position: relative;
+}
+.honey-drip-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FFD04B, #F4A622, #E8960A, #F4A622, #FFD04B);
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Active nav item honey highlight */
+.nav-honey-active {
+  background: linear-gradient(135deg, rgba(255, 208, 75, 0.3), rgba(244, 166, 34, 0.2));
+  border: 1px solid rgba(244, 166, 34, 0.25);
+}
+
+/* Stats card honey style */
+.stats-card-honey {
+  background: linear-gradient(135deg, rgba(255, 251, 240, 0.9), rgba(255, 243, 204, 0.7));
+  border: 1.5px solid rgba(244, 166, 34, 0.2);
+  transition: all 0.3s ease;
+}
+.stats-card-honey:hover {
+  border-color: rgba(244, 166, 34, 0.4);
+  box-shadow: 0 8px 32px rgba(244, 166, 34, 0.15);
+  transform: translateY(-2px);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-br from-honey-light via-honey to-honey-rich text-brown font-display tracking-wide rounded-full px-8 py-3 shadow-lg hover:-translate-y-1 hover:shadow-xl transition-all border-none cursor-pointer text-lg;
+  }
+  .btn-outline {
+    @apply bg-white/70 text-honey-rich font-display border-2 border-honey rounded-full px-8 py-3 cursor-pointer transition-all hover:bg-honey-pale hover:-translate-y-1 text-lg;
+  }
+  .card-honey {
+    @apply bg-white border-2 border-honey/20 rounded-[24px] shadow-xl hover:border-honey/40 hover:-translate-y-1 transition-all;
+  }
+}

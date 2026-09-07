@@ -1,0 +1,10 @@
+{
+  "description": "Explore a unique digital ecosystem that connects beekeepers and consumers through AI and blockchain, showcasing the beauty of sustainable honey production.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

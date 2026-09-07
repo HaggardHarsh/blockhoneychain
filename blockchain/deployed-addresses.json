@@ -1,0 +1,9 @@
+{
+  "BeekeeperRegistry": "0xAD4D13d6e39bd1cae54752154E0795aa0EA32209",
+  "HoneyBatch": "0x0285311C223096AA789c55c0Fc42A5e124B0e4ad",
+  "QualityCertification": "0xDc0519a90C84a47729CB0FfeA92A5D079BCFcF71",
+  "deployedAt": "2026-09-07T19:39:51.677Z",
+  "network": "fuji",
+  "chainId": 80002,
+  "deployer": "0x65d5c39Bc6Ac2317fa4d67f4892D5d8cF70b45c7"
+}
