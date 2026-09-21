@@ -1,4 +1,4 @@
-# 🍯 HoneyChain
+# HoneyChain
 
 **Blockchain-based Honey Traceability & Smart Beekeeping System**
 
@@ -6,12 +6,12 @@ Built for Smart India Hackathon (SIH) 2026 — KVIC Honey Mission
 
 ## Features
 
-- 🔗 **Blockchain Traceability** — Immutable batch tracking from hive to consumer on Polygon
-- 📱 **QR Code Verification** — Consumers scan to verify honey authenticity
-- 🧪 **FSSAI Quality Testing** — Lab results stored on blockchain with IPFS
-- 🧑🌾 **Beekeeper App** — Mobile-first PWA for registration, hive & batch management
-- 🏛️ **Admin Dashboard** — KVIC oversight with analytics, approvals, and quality audit
-- 🐝 **Smart Beekeeping** — IoT-ready architecture for hive monitoring (Phase 2)
+- **Blockchain Traceability** — Immutable batch tracking from hive to consumer on Polygon
+- **QR Code Verification** — Consumers scan to verify honey authenticity
+- **FSSAI Quality Testing** — Lab results stored on blockchain with IPFS
+- **Beekeeper App** — Mobile-first PWA for registration, hive & batch management
+- **Admin Dashboard** — KVIC oversight with analytics, approvals, and quality audit
+- **Smart Beekeeping** — IoT-ready architecture for hive monitoring (Phase 2)
 
 ## Tech Stack
 
@@ -71,7 +71,7 @@ npm run dev:client
 | Beekeeper | ram@example.com | beekeeper123 |
 | Lab Tester | lab@honeychain.com | lab123 |
 
-## 🔷 Deploy to Polygon Amoy Testnet
+## Deploy to Polygon Amoy Testnet
 
 To deploy smart contracts to the real Polygon blockchain (testnet):
 
@@ -131,3 +131,6 @@ honeychain/
 ## License
 
 MIT — Built for SIH 2026
+
+## Result
+Unfortunately we couldn't make it through the internal round, hence this project rests here for eternity.
